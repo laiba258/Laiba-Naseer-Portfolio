@@ -1,15 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0d9488;
-  --color-primary-light: #14b8a6;
-  --color-primary-dark: #0f766e;
-  --color-accent: #06b6d4;
-  --color-dark: #030712;
-  --color-dark-2: #0a0f1e;
-  --color-dark-3: #0f172a;
-  --color-surface: #111827;
-  --color-surface-2: #1f2937;
+  --color-primary: #7c3aed;
+  --color-primary-light: #8b5cf6;
+  --color-accent: #f472b6;
+  --color-warm: #fb923c;
+  --color-dark: #0c0a09;
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -17,19 +13,19 @@
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #030712; }
-::-webkit-scrollbar-thumb { background: #0d9488; border-radius: 2px; }
+::-webkit-scrollbar-track { background: #0c0a09; }
+::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 2px; }
 
 /* ── Base ── */
 html { scroll-behavior: smooth; }
 body {
-  background: #030712;
-  color: #f1f5f9;
+  background: #0c0a09;
+  color: #e7e5e4;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
-/* ── Noise texture overlay ── */
+/* ── Grain texture ── */
 body::before {
   content: '';
   position: fixed;
@@ -37,64 +33,68 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
-/* ── Gradient mesh background ── */
+/* ── Mesh background ── */
 .mesh-bg {
   background:
-    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(13,148,136,0.15) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(6,182,212,0.1) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 50% 50%, rgba(15,23,42,0.8) 0%, transparent 100%),
-    #030712;
+    radial-gradient(ellipse 70% 50% at 10% 0%, rgba(124,58,237,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 90%, rgba(244,114,182,0.08) 0%, transparent 60%),
+    #0c0a09;
 }
 
-/* ── Glow effects ── */
-.glow-teal { box-shadow: 0 0 40px rgba(13,148,136,0.3), 0 0 80px rgba(13,148,136,0.1); }
-.glow-cyan { box-shadow: 0 0 40px rgba(6,182,212,0.3), 0 0 80px rgba(6,182,212,0.1); }
-.text-glow { text-shadow: 0 0 30px rgba(13,148,136,0.6), 0 0 60px rgba(13,148,136,0.3); }
-.text-glow-cyan { text-shadow: 0 0 30px rgba(6,182,212,0.6); }
-
-/* ── Glass morphism ── */
+/* ── Glass ── */
 .glass {
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
 }
-.glass-teal {
-  background: rgba(13,148,136,0.05);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(13,148,136,0.15);
+.glass-purple {
+  background: rgba(124,58,237,0.06);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(124,58,237,0.18);
+}
+
+/* ── Surface cards (readable!) ── */
+.card-surface {
+  background: rgba(28, 25, 23, 0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+}
+.card-surface-light {
+  background: rgba(41, 37, 36, 0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
 }
 
 /* ── Gradient text ── */
 .gradient-text {
-  background: linear-gradient(135deg, #0d9488 0%, #06b6d4 50%, #818cf8 100%);
+  background: linear-gradient(135deg, #a78bfa 0%, #f472b6 60%, #fb923c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.gradient-text-teal {
-  background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+.gradient-text-purple {
+  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* ── Animated gradient border ── */
-.border-gradient {
+/* ── Animated border ── */
+.border-glow {
   position: relative;
-  border-radius: 16px;
 }
-.border-gradient::before {
+.border-glow::before {
   content: '';
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, #0d9488, #06b6d4, #818cf8, #0d9488);
+  background: linear-gradient(135deg, #7c3aed, #f472b6, #fb923c, #7c3aed);
   background-size: 300% 300%;
-  animation: borderRotate 4s linear infinite;
+  animation: borderRotate 5s linear infinite;
   z-index: -1;
 }
 @keyframes borderRotate {
@@ -103,24 +103,26 @@ body::before {
   100% { background-position: 0% 50%; }
 }
 
-/* ── Floating animation ── */
+/* ── Glow ── */
+.glow-purple { box-shadow: 0 0 40px rgba(124,58,237,0.3), 0 0 80px rgba(124,58,237,0.1); }
+.glow-pink { box-shadow: 0 0 40px rgba(244,114,182,0.25); }
+
+/* ── Float ── */
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-12px) rotate(1deg); }
-  66% { transform: translateY(-6px) rotate(-1deg); }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
-.animate-float { animation: float 6s ease-in-out infinite; }
-.animate-float-slow { animation: float 9s ease-in-out infinite; }
-.animate-float-fast { animation: float 4s ease-in-out infinite; }
+.animate-float { animation: float 5s ease-in-out infinite; }
+.animate-float-slow { animation: float 8s ease-in-out infinite; }
 
 /* ── Pulse glow ── */
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
 }
 .animate-pulse-glow { animation: pulseGlow 3s ease-in-out infinite; }
 
-/* ── Typing cursor ── */
+/* ── Cursor blink ── */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -129,89 +131,55 @@ body::before {
 
 /* ── Slide animations ── */
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@keyframes slideLeft {
-  from { opacity: 0; transform: translateX(40px); }
-  to { opacity: 1; transform: translateX(0); }
-}
 @keyframes slideRight {
-  from { opacity: 0; transform: translateX(-40px); }
+  from { opacity: 0; transform: translateX(-30px); }
   to { opacity: 1; transform: translateX(0); }
 }
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
 
-.animate-slide-up { animation: slideUp 0.7s ease forwards; }
-.animate-slide-left { animation: slideLeft 0.7s ease forwards; }
-.animate-slide-right { animation: slideRight 0.7s ease forwards; }
-.animate-fade-in { animation: fadeIn 0.7s ease forwards; }
-.animate-scale-in { animation: scaleIn 0.5s ease forwards; }
+.animate-slide-up { animation: slideUp 0.6s ease forwards; }
+.animate-slide-right { animation: slideRight 0.6s ease forwards; }
+.animate-fade-in { animation: fadeIn 0.6s ease forwards; }
 
-/* ── Stagger delays ── */
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }
 .delay-500 { animation-delay: 0.5s; }
 .delay-600 { animation-delay: 0.6s; }
-.delay-700 { animation-delay: 0.7s; }
-.delay-800 { animation-delay: 0.8s; }
 
-/* ── Particle canvas ── */
-#particles-canvas {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.5;
-}
-
-/* ── Section reveal (intersection observer) ── */
+/* ── Reveal on scroll ── */
 .reveal {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-left {
   opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.reveal-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
 .reveal-right {
   opacity: 0;
-  transform: translateX(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.reveal-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
 
 /* ── Skill bar ── */
 .skill-bar-fill {
   height: 100%;
   border-radius: 9999px;
-  background: linear-gradient(90deg, #0d9488, #06b6d4);
   width: 0%;
   transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 10px rgba(13,148,136,0.5);
 }
 
 /* ── Card hover ── */
@@ -219,8 +187,8 @@ body::before {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card-hover:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(13,148,136,0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(124,58,237,0.15);
 }
 
 /* ── Nav link ── */
@@ -233,61 +201,62 @@ body::before {
   position: absolute;
   bottom: -4px; left: 0;
   width: 0; height: 2px;
-  background: linear-gradient(90deg, #0d9488, #06b6d4);
+  background: linear-gradient(90deg, #7c3aed, #f472b6);
   transition: width 0.3s ease;
   border-radius: 1px;
 }
 .nav-link:hover::after,
 .nav-link.active::after { width: 100%; }
 
-/* ── Magnetic button ── */
-.btn-magnetic {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* ── Btn ── */
+.btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  color: white;
+  transition: all 0.3s ease;
 }
-.btn-magnetic:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(13,148,136,0.4);
+.btn-primary:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 30px rgba(124,58,237,0.4);
+}
+.btn-outline {
+  border: 1px solid rgba(124,58,237,0.4);
+  color: #a78bfa;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  border-color: #a78bfa;
+  background: rgba(124,58,237,0.1);
 }
 
-/* ── Timeline ── */
-.timeline-line {
-  background: linear-gradient(180deg, #0d9488, transparent);
-}
-
-/* ── Tilt card ── */
-.tilt-card {
-  transform-style: preserve-3d;
-  transition: transform 0.1s ease;
-}
-
-/* ── Scrolling marquee ── */
+/* ── Marquee ── */
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-.animate-marquee { animation: marquee 20s linear infinite; }
+.animate-marquee { animation: marquee 22s linear infinite; }
 
-/* ── Orbit animation ── */
-@keyframes orbit {
-  from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
-  to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
-}
-.animate-orbit { animation: orbit 8s linear infinite; }
-.animate-orbit-reverse { animation: orbit 12s linear infinite reverse; }
-
-/* ── Shimmer ── */
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-.shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(13,148,136,0.3) 50%, transparent 100%);
-  background-size: 200% auto;
-  animation: shimmer 3s linear infinite;
+/* ── Tag pill ── */
+.tag {
+  background: rgba(124,58,237,0.12);
+  border: 1px solid rgba(124,58,237,0.2);
+  color: #c4b5fd;
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-family: 'JetBrains Mono', monospace;
 }
 
-/* ── Custom selection ── */
+/* ── Selection ── */
 ::selection {
-  background: rgba(13,148,136,0.3);
-  color: #f1f5f9;
+  background: rgba(124,58,237,0.3);
+  color: #f5f3ff;
+}
+
+/* ── Project preview iframe ── */
+.preview-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  transform-origin: top left;
+  pointer-events: none;
 }

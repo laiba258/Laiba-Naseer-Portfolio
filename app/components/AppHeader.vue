@@ -6,24 +6,22 @@
     <UContainer>
       <nav class="flex items-center justify-between">
         <!-- Logo -->
-        <NuxtLink to="/" class="group flex items-center gap-2">
-          <div class="relative w-9 h-9">
-            <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-400 opacity-80 group-hover:opacity-100 transition-opacity" />
-            <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-400 blur-md opacity-40 group-hover:opacity-70 transition-opacity" />
-            <span class="relative z-10 flex items-center justify-center w-full h-full text-white font-bold font-mono text-sm">LN</span>
+        <NuxtLink to="/" class="group flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg border-glow bg-[#0c0a09] flex items-center justify-center text-white font-bold font-mono text-sm">
+            LN
           </div>
-          <span class="font-display font-bold text-lg text-white group-hover:text-teal-400 transition-colors">
-            Laiba<span class="text-teal-400">.</span>
+          <span class="font-display font-bold text-base text-white group-hover:text-violet-400 transition-colors">
+            Laiba<span class="text-violet-400">.</span>
           </span>
         </NuxtLink>
 
         <!-- Desktop nav -->
-        <ul class="hidden md:flex items-center gap-8">
+        <ul class="hidden md:flex items-center gap-7">
           <li v-for="link in navLinks" :key="link.to">
             <NuxtLink
               :to="link.to"
-              class="nav-link text-sm font-medium text-slate-400 hover:text-white transition-colors"
-              :class="{ active: activeSection === link.section }"
+              class="nav-link text-sm font-medium text-stone-400 hover:text-white transition-colors"
+              :class="{ active: isActive(link.to) }"
             >
               {{ link.label }}
             </NuxtLink>
@@ -34,15 +32,13 @@
         <div class="flex items-center gap-3">
           <a
             href="mailto:laibanaseertts@gmail.com"
-            class="hidden md:flex btn-magnetic items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-white border border-teal-500/40 hover:border-teal-400 hover:bg-teal-500/10 transition-all duration-300"
+            class="hidden md:flex btn-outline items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
           >
-            <UIcon name="i-heroicons-envelope" class="w-4 h-4 text-teal-400" />
+            <UIcon name="i-heroicons-envelope" class="w-3.5 h-3.5" />
             Hire Me
           </a>
-
-          <!-- Mobile menu button -->
           <button
-            class="md:hidden p-2 rounded-lg glass text-slate-400 hover:text-white transition-colors"
+            class="md:hidden p-2 rounded-lg glass text-stone-400 hover:text-white transition-colors"
             @click="mobileOpen = !mobileOpen"
           >
             <UIcon :name="mobileOpen ? 'i-heroicons-x-mark' : 'i-heroicons-bars-3'" class="w-5 h-5" />
@@ -59,10 +55,10 @@
             <li v-for="link in navLinks" :key="link.to">
               <NuxtLink
                 :to="link.to"
-                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-stone-400 hover:text-white hover:bg-white/5 transition-all"
                 @click="mobileOpen = false"
               >
-                <UIcon :name="link.icon" class="w-4 h-4 text-teal-400" />
+                <UIcon :name="link.icon" class="w-4 h-4 text-violet-400" />
                 {{ link.label }}
               </NuxtLink>
             </li>
@@ -74,44 +70,31 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
 const scrolled = ref(false)
 const mobileOpen = ref(false)
-const activeSection = ref('home')
 
 const navLinks = [
-  { to: '/#home', label: 'Home', section: 'home', icon: 'i-heroicons-home' },
-  { to: '/#about', label: 'About', section: 'about', icon: 'i-heroicons-user' },
-  { to: '/#skills', label: 'Skills', section: 'skills', icon: 'i-heroicons-code-bracket' },
-  { to: '/#projects', label: 'Projects', section: 'projects', icon: 'i-heroicons-rectangle-stack' },
-  { to: '/#experience', label: 'Experience', section: 'experience', icon: 'i-heroicons-briefcase' },
-  { to: '/#contact', label: 'Contact', section: 'contact', icon: 'i-heroicons-chat-bubble-left-right' },
+  { to: '/', label: 'Home', icon: 'i-heroicons-home' },
+  { to: '/about', label: 'About', icon: 'i-heroicons-user' },
+  { to: '/projects', label: 'Projects', icon: 'i-heroicons-rectangle-stack' },
+  { to: '/contact', label: 'Contact', icon: 'i-heroicons-chat-bubble-left-right' },
 ]
+
+function isActive(path: string) {
+  return route.path === path
+}
 
 onMounted(() => {
   window.addEventListener('scroll', () => {
     scrolled.value = window.scrollY > 20
-
-    // Active section detection
-    const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact']
-    for (const id of sections.reverse()) {
-      const el = document.getElementById(id)
-      if (el && window.scrollY >= el.offsetTop - 100) {
-        activeSection.value = id
-        break
-      }
-    }
   })
 })
 </script>
 
 <style scoped>
 .mobile-menu-enter-active,
-.mobile-menu-leave-active {
-  transition: all 0.3s ease;
-}
+.mobile-menu-leave-active { transition: all 0.3s ease; }
 .mobile-menu-enter-from,
-.mobile-menu-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
-}
+.mobile-menu-leave-to { opacity: 0; transform: translateY(-10px); }
 </style>

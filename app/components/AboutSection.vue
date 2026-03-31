@@ -1,133 +1,107 @@
 <template>
-  <section id="about" class="py-32 relative overflow-hidden">
-    <!-- Background accent -->
-    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full opacity-5"
-      style="background: radial-gradient(circle, #06b6d4, transparent 70%); filter: blur(80px);" />
-
+  <section class="py-16 relative overflow-hidden">
     <UContainer>
-      <!-- Section header -->
-      <div class="text-center mb-20 reveal">
-        <p class="text-teal-400 font-mono text-sm mb-3">// get to know me</p>
-        <h2 class="font-display font-black text-5xl md:text-6xl text-white mb-4">
-          About <span class="gradient-text">Me</span>
+      <div class="mb-14 reveal">
+        <p class="text-violet-400 font-mono text-xs mb-2">// get to know me</p>
+        <h2 class="font-display font-black text-4xl md:text-5xl text-white">
+          About<span class="gradient-text">.</span>
         </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-teal-500 to-cyan-400 rounded-full mx-auto" />
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <!-- Left: Visual card -->
-        <div class="reveal-left">
-          <div class="relative">
-            <!-- Main card -->
-            <div class="border-gradient rounded-3xl p-1">
-              <div class="glass rounded-3xl p-8 space-y-6">
-                <!-- Profile header -->
-                <div class="flex items-center gap-4">
-                  <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-400 flex items-center justify-center text-2xl font-black text-white font-display glow-teal flex-shrink-0">
-                    LN
-                  </div>
-                  <div>
-                    <h3 class="font-display font-bold text-xl text-white">Laiba Naseer</h3>
-                    <p class="text-teal-400 text-sm">Frontend Dev & UI Designer</p>
-                    <div class="flex items-center gap-1 mt-1">
-                      <UIcon name="i-heroicons-map-pin" class="w-3 h-3 text-slate-500" />
-                      <span class="text-slate-500 text-xs">Toba Tek Singh, Punjab, Pakistan</span>
-                    </div>
-                  </div>
-                </div>
+      <div class="grid lg:grid-cols-2 gap-14 items-start">
+        <!-- Left: text -->
+        <div class="reveal-left space-y-6">
+          <p class="text-stone-300 text-lg leading-relaxed">
+            I'm a Frontend Developer and UI Designer based in
+            <span class="text-white font-medium">Toba Tek Singh, Pakistan</span>.
+            I specialize in the Vue.js and Nuxt.js ecosystem, and I bring over
+            <span class="text-violet-400 font-medium">3 years of graphic design experience</span>
+            to every project I touch.
+          </p>
+          <p class="text-stone-400 leading-relaxed">
+            I'm currently in my final year of a BS in Computer Science at the University of Agriculture,
+            Sub Campus Toba Tek Singh. I love the intersection of design and engineering — where things
+            look great and work even better.
+          </p>
+          <p class="text-stone-400 leading-relaxed">
+            Most of my projects so far have been team learning projects while I was growing my skills.
+            I'm now actively looking for freelance work and opportunities to build things independently.
+          </p>
 
-                <div class="h-px bg-gradient-to-r from-teal-500/20 to-transparent" />
-
-                <!-- Info grid -->
-                <div class="grid grid-cols-2 gap-4">
-                  <div v-for="info in infoItems" :key="info.label" class="glass rounded-xl p-3">
-                    <div class="flex items-center gap-2 mb-1">
-                      <UIcon :name="info.icon" class="w-3.5 h-3.5 text-teal-400" />
-                      <span class="text-slate-500 text-xs">{{ info.label }}</span>
-                    </div>
-                    <p class="text-slate-200 text-sm font-medium">{{ info.value }}</p>
-                  </div>
-                </div>
-
-                <div class="h-px bg-gradient-to-r from-teal-500/20 to-transparent" />
-
-                <!-- Interests -->
-                <div>
-                  <p class="text-slate-500 text-xs mb-3 font-mono">// interests</p>
-                  <div class="flex flex-wrap gap-2">
-                    <span v-for="interest in interests" :key="interest"
-                      class="px-3 py-1 rounded-full glass-teal text-teal-400 text-xs font-medium">
-                      {{ interest }}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Floating elements -->
-            <div class="absolute -top-4 -right-4 glass-teal rounded-2xl p-3 animate-float">
-              <UIcon name="i-heroicons-academic-cap" class="w-6 h-6 text-teal-400" />
-            </div>
-            <div class="absolute -bottom-4 -left-4 glass rounded-2xl p-3 animate-float-slow">
-              <UIcon name="i-heroicons-code-bracket" class="w-6 h-6 text-cyan-400" />
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Text content -->
-        <div class="reveal-right space-y-8">
-          <div class="space-y-4">
-            <h3 class="font-display font-bold text-3xl text-white">
-              Crafting Digital Experiences That
-              <span class="gradient-text"> Leave an Impression</span>
-            </h3>
-            <p class="text-slate-400 leading-relaxed">
-              I'm a passionate Frontend Developer and UI Designer based in Pakistan, specializing in the
-              Vue.js and Nuxt.js ecosystem. With over 3 years of graphic design experience, I bridge the
-              gap between stunning visuals and clean, performant code.
-            </p>
-            <p class="text-slate-400 leading-relaxed">
-              Currently pursuing my BS in Computer Science at the University of Agriculture, Sub Campus
-              Toba Tek Singh (8th semester), I combine academic knowledge with real-world freelance
-              experience to deliver exceptional digital products.
-            </p>
-          </div>
-
-          <!-- Education card -->
-          <div class="glass rounded-2xl p-6 border-l-2 border-teal-500">
+          <!-- Education -->
+          <div class="card-surface p-5 rounded-2xl border-l-2 border-violet-500">
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center flex-shrink-0">
-                <UIcon name="i-heroicons-academic-cap" class="w-5 h-5 text-teal-400" />
+              <div class="w-9 h-9 rounded-xl bg-violet-500/10 flex items-center justify-center flex-shrink-0">
+                <UIcon name="i-heroicons-academic-cap" class="w-5 h-5 text-violet-400" />
               </div>
               <div>
-                <p class="text-teal-400 text-xs font-mono mb-1">// education</p>
-                <h4 class="text-white font-semibold">BS Computer Science</h4>
-                <p class="text-slate-400 text-sm">University of Agriculture, Sub Campus Toba Tek Singh</p>
-                <p class="text-slate-500 text-xs mt-1">Currently enrolled · 8th Semester</p>
+                <h4 class="text-white font-semibold text-sm">BS Computer Science</h4>
+                <p class="text-stone-400 text-sm">University of Agriculture, Sub Campus Toba Tek Singh</p>
+                <p class="text-stone-600 text-xs mt-1">8th Semester · Graduating soon</p>
               </div>
             </div>
           </div>
 
           <!-- Certifications -->
           <div class="space-y-3">
-            <p class="text-slate-500 text-xs font-mono">// certifications</p>
+            <p class="text-stone-600 text-xs font-mono">// certifications</p>
             <div v-for="cert in certifications" :key="cert.title"
-              class="flex items-center gap-3 glass rounded-xl p-4 card-hover">
-              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                <UIcon name="i-heroicons-check-badge" class="w-4 h-4 text-teal-400" />
-              </div>
+              class="flex items-center gap-3 card-surface p-4 rounded-xl">
+              <UIcon name="i-heroicons-check-badge" class="w-5 h-5 text-violet-400 flex-shrink-0" />
               <div>
-                <p class="text-slate-200 text-sm font-medium">{{ cert.title }}</p>
-                <p class="text-slate-500 text-xs">{{ cert.issuer }}</p>
+                <p class="text-stone-200 text-sm font-medium">{{ cert.title }}</p>
+                <p class="text-stone-500 text-xs">{{ cert.issuer }}</p>
               </div>
             </div>
           </div>
 
-          <!-- Download CV button -->
-          <a href="#" class="btn-magnetic inline-flex items-center gap-3 px-6 py-3 rounded-2xl glass-teal text-teal-400 font-medium hover:text-white hover:bg-teal-500/20 transition-all duration-300">
-            <UIcon name="i-heroicons-arrow-down-tray" class="w-5 h-5" />
+          <a href="#" class="btn-outline inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium">
+            <UIcon name="i-heroicons-arrow-down-tray" class="w-4 h-4" />
             Download Resume
           </a>
+        </div>
+
+        <!-- Right: info card -->
+        <div class="reveal-right">
+          <div class="card-surface rounded-2xl p-6 space-y-5">
+            <!-- Profile -->
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-600 to-pink-500 flex items-center justify-center text-xl font-black text-white font-display flex-shrink-0">
+                LN
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-white">Laiba Naseer</h3>
+                <p class="text-violet-400 text-sm">Frontend Dev & UI Designer</p>
+                <div class="flex items-center gap-1 mt-0.5">
+                  <UIcon name="i-heroicons-map-pin" class="w-3 h-3 text-stone-600" />
+                  <span class="text-stone-600 text-xs">Toba Tek Singh, Pakistan</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="h-px bg-white/5" />
+
+            <!-- Info grid -->
+            <div class="grid grid-cols-2 gap-3">
+              <div v-for="info in infoItems" :key="info.label" class="card-surface-light rounded-xl p-3">
+                <div class="flex items-center gap-1.5 mb-1">
+                  <UIcon :name="info.icon" class="w-3 h-3 text-violet-400" />
+                  <span class="text-stone-600 text-xs">{{ info.label }}</span>
+                </div>
+                <p class="text-stone-200 text-sm font-medium truncate">{{ info.value }}</p>
+              </div>
+            </div>
+
+            <div class="h-px bg-white/5" />
+
+            <!-- Interests -->
+            <div>
+              <p class="text-stone-600 text-xs font-mono mb-3">// interests</p>
+              <div class="flex flex-wrap gap-2">
+                <span v-for="interest in interests" :key="interest" class="tag">{{ interest }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </UContainer>
@@ -139,16 +113,13 @@ const infoItems = [
   { label: 'Email', value: 'laibanaseertts@gmail.com', icon: 'i-heroicons-envelope' },
   { label: 'Phone', value: '+92 345 7671494', icon: 'i-heroicons-phone' },
   { label: 'Location', value: 'Toba Tek Singh, PK', icon: 'i-heroicons-map-pin' },
-  { label: 'Availability', value: 'Open to Work', icon: 'i-heroicons-briefcase' },
+  { label: 'Status', value: 'Open to Work', icon: 'i-heroicons-briefcase' },
 ]
 
-const interests = [
-  'Learning new tech', 'Web Dev tools', 'Creative Design',
-  'Educational content', 'Open Source',
-]
+const interests = ['Vue.js', 'UI Design', 'Figma', 'Open Source', 'Learning']
 
 const certifications = [
-  { title: 'Microsoft Certified: Azure AI Engineer Associate', issuer: 'Microsoft' },
-  { title: 'Web Development 6-Month Course', issuer: 'Ecommerce by Experts, Toba' },
+  { title: 'Microsoft Azure AI Engineer Associate', issuer: 'Microsoft' },
+  { title: 'Web Development (6-Month Course)', issuer: 'Ecommerce by Experts, Toba' },
 ]
 </script>

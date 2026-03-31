@@ -1,12 +1,8 @@
 <template>
   <div>
     <HeroSection />
-    <StatsSection />
-    <AboutSection />
     <SkillsSection />
-    <ProjectsSection />
-    <ExperienceSection />
-    <ContactSection />
+    <ProjectsSection :preview="true" />
   </div>
 </template>
 
@@ -14,12 +10,7 @@
 useHead({
   title: 'Laiba Naseer — Frontend Developer & UI Designer',
   meta: [
-    {
-      name: 'description',
-      content: 'High-performance Frontend Developer specializing in Vue.js & Nuxt.js with 3+ years of graphic design experience. Available for freelance work.',
-    },
-    { property: 'og:title', content: 'Laiba Naseer — Frontend Developer & UI Designer' },
-    { property: 'og:description', content: 'Vue.js & Nuxt.js specialist crafting beautiful, performant web experiences.' },
+    { name: 'description', content: 'Frontend Developer specializing in Vue.js & Nuxt.js with a background in graphic design. Based in Pakistan.' },
   ],
 })
 </script>
