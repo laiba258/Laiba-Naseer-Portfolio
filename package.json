@@ -1,0 +1,38 @@
+{
+  "name": "Laiba-Naseer-Portfolio",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "nuxt": "^4.4.2",
+    "vue": "^3.5.30",
+    "vue-router": "^4.5.0",
+    "@nuxt/ui": "^3.0.0",
+    "@nuxt/fonts": "latest",
+    "@nuxt/icon": "latest",
+    "@supabase/supabase-js": "latest",
+    "bcryptjs": "latest",
+    "dotenv": "latest",
+    "drizzle-orm": "latest",
+    "jsonwebtoken": "latest",
+    "pg": "latest"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "latest",
+    "@types/bcryptjs": "latest",
+    "@types/jsonwebtoken": "latest",
+    "@types/pg": "latest",
+    "drizzle-kit": "latest",
+    "eslint": "latest"
+  }
+}
