@@ -15,6 +15,14 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  fonts: {
+    families: [
+      { name: 'Inter', provider: 'google', weights: [300, 400, 500, 600, 700] },
+      { name: 'Space Grotesk', provider: 'google', weights: [400, 500, 600, 700, 800, 900] },
+      { name: 'JetBrains Mono', provider: 'google', weights: [400, 500, 700] },
+    ],
+  },
+
   runtimeConfig: {
     jwtSecret: process.env.JWT_SECRET,
     databaseUrl: process.env.DATABASE_URL,
