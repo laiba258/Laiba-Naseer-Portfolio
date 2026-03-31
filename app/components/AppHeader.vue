@@ -95,7 +95,11 @@ watch(isDark, val => localStorage.setItem('colorMode', val ? 'dark' : 'light'))
 
     <Transition name="mobile-menu">
       <div v-if="mobileOpen" class="md:hidden border-t mt-2"
-        :class="isDark ? 'glass border-white/5' : 'bg-white border-stone-100 shadow-lg'">
+        :class="isDark ? 'border-white/5' : 'border-stone-100'"
+        :style="isDark
+          ? 'background: rgba(12,10,9,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);'
+          : 'background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 8px 32px rgba(0,0,0,0.08);'"
+      >
         <UContainer>
           <ul class="py-4 flex flex-col gap-1">
             <li v-for="link in navLinks" :key="link.to">

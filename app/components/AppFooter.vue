@@ -1,11 +1,24 @@
+<script setup lang="ts">
+const socials = [
+  { label: 'GitHub', href: 'https://github.com/laiba258', icon: 'i-simple-icons-github' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/laiba-naseer-9564a1397', icon: 'i-simple-icons-linkedin' },
+  { label: 'Email', href: 'mailto:laibanaseertts@gmail.com', icon: 'i-heroicons-envelope' },
+]
+
+const navLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/contact', label: 'Contact' },
+]
+</script>
+
 <template>
   <footer class="relative border-t border-white/5 py-14 overflow-hidden">
     <div class="absolute inset-0 pointer-events-none"
       style="background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(124,58,237,0.06), transparent)" />
-
     <UContainer class="relative z-10">
       <div class="grid md:grid-cols-3 gap-10 mb-10">
-        <!-- Brand -->
         <div class="space-y-4">
           <div class="flex items-center gap-2.5">
             <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-600 to-pink-500 flex items-center justify-center text-white font-bold text-sm">
@@ -17,14 +30,13 @@
             Frontend Developer & UI Designer crafting beautiful, performant web experiences.
           </p>
           <div class="flex gap-3">
-            <a v-for="social in socials" :key="social.label" :href="social.href" target="_blank"
+            <a v-for="social in socials" :key="social.label" :href="social.href" target="_blank" rel="noopener"
               class="w-8 h-8 rounded-lg card-surface flex items-center justify-center text-stone-500 hover:text-violet-400 transition-colors">
               <UIcon :name="social.icon" class="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
 
-        <!-- Quick links -->
         <div>
           <p class="text-stone-500 text-xs font-mono mb-4">// navigation</p>
           <ul class="space-y-2.5">
@@ -38,7 +50,6 @@
           </ul>
         </div>
 
-        <!-- Contact -->
         <div>
           <p class="text-stone-500 text-xs font-mono mb-4">// contact</p>
           <div class="space-y-3">
@@ -74,18 +85,3 @@
     </UContainer>
   </footer>
 </template>
-
-<script setup lang="ts">
-const socials = [
-  { label: 'GitHub', href: 'https://github.com/laiba258', icon: 'i-simple-icons-github' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/laiba-naseer-9564a1397', icon: 'i-simple-icons-linkedin' },
-  { label: 'Email', href: 'mailto:laibanaseertts@gmail.com', icon: 'i-heroicons-envelope' },
-]
-
-const navLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/about', label: 'About' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/contact', label: 'Contact' },
-]
-</script>

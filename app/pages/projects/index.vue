@@ -1,8 +1,15 @@
+<script setup lang="ts">
+import { projects, teamSnapshots } from '~/data/projects'
+
+useHead({
+  title: 'Projects — Laiba Naseer',
+  meta: [{ name: 'description', content: 'Projects built by Laiba Naseer — Vue.js, Nuxt.js, and UI design work.' }],
+})
+</script>
+
 <template>
   <div class="pt-28 pb-20">
     <UContainer>
-
-      <!-- Header -->
       <div class="mb-16">
         <p class="text-violet-400 font-mono text-xs mb-2">// my work</p>
         <h1 class="font-display font-black text-5xl md:text-6xl text-white">
@@ -14,7 +21,6 @@
         </p>
       </div>
 
-      <!-- ── Individual Projects ── -->
       <div class="mb-24">
         <div class="flex items-center gap-3 mb-8">
           <div class="w-2 h-2 rounded-full bg-violet-400 flex-shrink-0" />
@@ -23,14 +29,10 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
-          <NuxtLink
-            v-for="project in projects"
-            :key="project.slug"
+          <NuxtLink v-for="project in projects" :key="project.slug"
             :to="`/projects/${project.slug}`"
-            class="group block card-surface card-hover rounded-2xl overflow-hidden"
-          >
+            class="group block card-surface card-hover rounded-2xl overflow-hidden">
             <div class="relative h-52 overflow-hidden bg-stone-950">
-              <!-- Screenshot via microlink API — works without X-Frame issues -->
               <img
                 :src="`https://api.microlink.io/?url=${encodeURIComponent(project.liveUrl)}&screenshot=true&meta=false&embed=screenshot.url`"
                 :alt="project.title"
@@ -67,7 +69,6 @@
         </div>
       </div>
 
-      <!-- ── Team Learning Snapshots ── -->
       <div>
         <div class="flex items-center gap-3 mb-2">
           <div class="w-2 h-2 rounded-full bg-pink-400 flex-shrink-0" />
@@ -78,22 +79,16 @@
           // practice work built as a team while learning — not deployed individually
         </p>
 
-        <!-- Row 1: left → right -->
         <div class="relative overflow-hidden mb-4">
           <div class="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none"
             style="background: linear-gradient(90deg, var(--bg), transparent)" />
           <div class="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none"
             style="background: linear-gradient(-90deg, var(--bg), transparent)" />
           <div class="flex gap-4 w-max animate-marquee-slow">
-            <SnapshotCard
-              v-for="(snap, i) in [...teamSnapshots, ...teamSnapshots]"
-              :key="`r1-${i}`"
-              :snap="snap"
-            />
+            <SnapshotCard v-for="(snap, i) in [...teamSnapshots, ...teamSnapshots]" :key="`r1-${i}`" :snap="snap" />
           </div>
         </div>
 
-        <!-- Row 2: right → left -->
         <div class="relative overflow-hidden">
           <div class="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none"
             style="background: linear-gradient(90deg, var(--bg), transparent)" />
@@ -102,22 +97,10 @@
           <div class="flex gap-4 w-max animate-marquee-slow-reverse">
             <SnapshotCard
               v-for="(snap, i) in [...[...teamSnapshots].reverse(), ...[...teamSnapshots].reverse()]"
-              :key="`r2-${i}`"
-              :snap="snap"
-            />
+              :key="`r2-${i}`" :snap="snap" />
           </div>
         </div>
       </div>
-
     </UContainer>
   </div>
 </template>
-
-<script setup lang="ts">
-import { projects, teamSnapshots } from '~/data/projects'
-
-useHead({
-  title: 'Projects — Laiba Naseer',
-  meta: [{ name: 'description', content: 'Projects built by Laiba Naseer — Vue.js, Nuxt.js, and UI design work.' }],
-})
-</script>

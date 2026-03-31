@@ -1,14 +1,24 @@
+<script setup lang="ts">
+import { projects } from '~/data/projects'
+
+const route = useRoute()
+const project = computed(() => projects.find(p => p.slug === route.params.slug))
+
+useHead(() => ({
+  title: project.value ? `${project.value.title} — Laiba Naseer` : 'Project — Laiba Naseer',
+}))
+</script>
+
 <template>
   <div class="pt-28 pb-20">
     <UContainer v-if="project">
-      <!-- Back -->
-      <NuxtLink to="/projects" class="inline-flex items-center gap-2 text-stone-500 hover:text-violet-400 transition-colors text-sm mb-10">
+      <NuxtLink to="/projects"
+        class="inline-flex items-center gap-2 text-stone-500 hover:text-violet-400 transition-colors text-sm mb-10">
         <UIcon name="i-heroicons-arrow-left" class="w-4 h-4" />
         All projects
       </NuxtLink>
 
       <div class="grid lg:grid-cols-5 gap-12">
-        <!-- Left: info -->
         <div class="lg:col-span-2 space-y-8">
           <div>
             <div class="flex items-center gap-3 mb-4">
@@ -21,7 +31,6 @@
             <p class="text-stone-400 leading-relaxed">{{ project.longDescription }}</p>
           </div>
 
-          <!-- Highlights -->
           <div class="card-surface p-6 rounded-2xl space-y-3">
             <p class="text-stone-500 text-xs font-mono mb-4">// highlights</p>
             <div v-for="point in project.highlights" :key="point"
@@ -32,7 +41,6 @@
             </div>
           </div>
 
-          <!-- Stack -->
           <div>
             <p class="text-stone-500 text-xs font-mono mb-3">// tech stack</p>
             <div class="flex flex-wrap gap-2">
@@ -40,20 +48,15 @@
             </div>
           </div>
 
-          <!-- Links -->
-          <div class="flex gap-3">
-            <a :href="project.liveUrl" target="_blank"
-              class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium">
-              <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-4 h-4" />
-              Live Site
-            </a>
-          </div>
+          <a :href="project.liveUrl" target="_blank" rel="noopener"
+            class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium">
+            <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-4 h-4" />
+            Live Site
+          </a>
         </div>
 
-        <!-- Right: live preview -->
         <div class="lg:col-span-3">
           <div class="card-surface rounded-2xl overflow-hidden">
-            <!-- Browser chrome -->
             <div class="flex items-center gap-1.5 px-4 py-3 border-b border-white/5">
               <div class="w-2.5 h-2.5 rounded-full bg-red-500/60" />
               <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
@@ -61,12 +64,11 @@
               <div class="flex-1 mx-3 h-6 rounded-md bg-stone-800 flex items-center px-3">
                 <span class="text-stone-500 text-xs font-mono truncate">{{ project.liveUrl }}</span>
               </div>
-              <a :href="project.liveUrl" target="_blank"
+              <a :href="project.liveUrl" target="_blank" rel="noopener"
                 class="text-stone-600 hover:text-violet-400 transition-colors">
                 <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-3.5 h-3.5" />
               </a>
             </div>
-            <!-- Screenshot preview with browser chrome -->
             <div class="relative bg-stone-950" style="height: 480px;">
               <img
                 :src="`https://api.microlink.io/?url=${encodeURIComponent(project.liveUrl)}&screenshot=true&meta=false&embed=screenshot.url`"
@@ -74,9 +76,8 @@
                 class="w-full h-full object-cover object-top"
                 loading="lazy"
               />
-              <!-- Open live link overlay -->
               <div class="absolute inset-0 flex items-end justify-center pb-6 opacity-0 hover:opacity-100 transition-opacity duration-300 bg-stone-950/40">
-                <a :href="project.liveUrl" target="_blank"
+                <a :href="project.liveUrl" target="_blank" rel="noopener"
                   class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium">
                   <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-4 h-4" />
                   Open Live Site
@@ -88,23 +89,12 @@
       </div>
     </UContainer>
 
-    <!-- 404 state -->
     <UContainer v-else class="text-center py-20">
       <p class="text-stone-500 text-lg">Project not found.</p>
-      <NuxtLink to="/projects" class="btn-outline inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium mt-6">
+      <NuxtLink to="/projects"
+        class="btn-outline inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium mt-6">
         Back to projects
       </NuxtLink>
     </UContainer>
   </div>
 </template>
-
-<script setup lang="ts">
-import { projects } from '~/data/projects'
-
-const route = useRoute()
-const project = computed(() => projects.find(p => p.slug === route.params.slug))
-
-useHead(() => ({
-  title: project.value ? `${project.value.title} — Laiba Naseer` : 'Project — Laiba Naseer',
-}))
-</script>

@@ -1,17 +1,10 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-
   ssr: true,
   srcDir: 'app',
 
-  modules: [
-    '@nuxt/ui',
-    '@nuxt/eslint',
-    '@nuxt/fonts',
-    '@nuxt/icon',
-  ],
+  modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/fonts', '@nuxt/icon'],
 
   css: ['~/assets/css/main.css'],
 
@@ -29,8 +22,6 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    experimental: {
-      wasm: true,
-    },
+    experimental: { wasm: true },
   },
 })

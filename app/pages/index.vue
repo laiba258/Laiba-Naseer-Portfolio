@@ -1,11 +1,3 @@
-<template>
-  <div>
-    <HeroSection />
-    <SkillsSection />
-    <ProjectsSection :preview="true" />
-  </div>
-</template>
-
 <script setup lang="ts">
 useHead({
   title: 'Laiba Naseer — Frontend Developer & UI Designer',
@@ -14,3 +6,11 @@ useHead({
   ],
 })
 </script>
+
+<template>
+  <div>
+    <HeroSection />
+    <SkillsSection />
+    <ProjectsSection :preview="true" />
+  </div>
+</template>

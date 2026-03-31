@@ -1,7 +1,16 @@
+<script setup lang="ts">
+import { projects } from '~/data/projects'
+
+const props = defineProps<{ preview?: boolean }>()
+
+const displayProjects = computed(() =>
+  props.preview ? projects.slice(0, 2) : projects
+)
+</script>
+
 <template>
   <section class="py-24 relative overflow-hidden">
     <UContainer>
-      <!-- Header -->
       <div class="flex items-end justify-between mb-14 reveal">
         <div>
           <p class="text-violet-400 font-mono text-xs mb-2">// selected work</p>
@@ -16,30 +25,19 @@
         </NuxtLink>
       </div>
 
-      <!-- Project cards grid -->
       <div class="grid md:grid-cols-2 gap-6">
-        <NuxtLink
-          v-for="(project, i) in displayProjects"
-          :key="project.slug"
+        <NuxtLink v-for="(project, i) in displayProjects" :key="project.slug"
           :to="`/projects/${project.slug}`"
           class="group block card-surface card-hover rounded-2xl overflow-hidden reveal"
-          :style="{ animationDelay: `${i * 0.1}s` }"
-        >
-          <!-- Preview area -->
+          :style="{ animationDelay: `${i * 0.1}s` }">
           <div class="relative h-52 overflow-hidden bg-stone-950">
-            <!-- Iframe preview -->
-            <div class="absolute inset-0 scale-[0.6] origin-top-left w-[167%] h-[167%] pointer-events-none">
-              <iframe
-                :src="project.liveUrl"
-                class="w-full h-full border-none"
-                loading="lazy"
-                sandbox="allow-scripts allow-same-origin"
-                title="Project preview"
-              />
-            </div>
-            <!-- Overlay gradient -->
+            <img
+              :src="`https://api.microlink.io/?url=${encodeURIComponent(project.liveUrl)}&screenshot=true&meta=false&embed=screenshot.url`"
+              :alt="project.title"
+              class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent" />
-            <!-- Hover overlay -->
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               :style="{ background: `${project.color}18` }">
               <span class="flex items-center gap-2 px-4 py-2 rounded-xl glass text-white text-sm font-medium">
@@ -47,13 +45,7 @@
                 View Details
               </span>
             </div>
-            <!-- Team badge -->
-            <div v-if="project.teamProject" class="absolute top-3 right-3 px-2.5 py-1 rounded-full glass text-xs text-stone-400 font-mono">
-              team project
-            </div>
           </div>
-
-          <!-- Info -->
           <div class="p-6">
             <div class="flex items-center justify-between mb-3">
               <span class="tag">{{ project.type }}</span>
@@ -70,7 +62,6 @@
         </NuxtLink>
       </div>
 
-      <!-- Mobile view all -->
       <div v-if="preview" class="mt-8 text-center md:hidden reveal">
         <NuxtLink to="/projects" class="btn-outline inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-medium">
           View all projects
@@ -80,13 +71,3 @@
     </UContainer>
   </section>
 </template>
-
-<script setup lang="ts">
-import { projects } from '~/data/projects'
-
-const props = defineProps<{ preview?: boolean }>()
-
-const displayProjects = computed(() =>
-  props.preview ? projects.slice(0, 2) : projects
-)
-</script>
