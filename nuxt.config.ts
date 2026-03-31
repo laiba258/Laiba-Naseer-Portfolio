@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  ssr: false,
+  ssr: true,
   srcDir: 'app',
 
   modules: [
@@ -24,10 +24,8 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    jwtSecret: process.env.JWT_SECRET,
-    databaseUrl: process.env.DATABASE_URL,
-    supabaseUrl: process.env.SUPABASE_URL,
-    supabaseServiceKey: process.env.SUPABASE_SERVICE_KEY,
+    resendApiKey: process.env.RESEND_API_KEY,
+    contactEmail: process.env.CONTACT_EMAIL || 'laibanaseertts@gmail.com',
   },
 
   nitro: {

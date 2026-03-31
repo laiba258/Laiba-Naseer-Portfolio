@@ -14,7 +14,6 @@
             <div class="flex items-center gap-3 mb-4">
               <span class="tag">{{ project.type }}</span>
               <span class="text-stone-600 text-xs font-mono">{{ project.year }}</span>
-              <span v-if="project.teamProject" class="tag">team project</span>
             </div>
             <h1 class="font-display font-black text-4xl md:text-5xl text-white mb-4">
               {{ project.title }}
@@ -67,14 +66,22 @@
                 <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-3.5 h-3.5" />
               </a>
             </div>
-            <!-- Iframe -->
-            <div class="relative h-[500px] bg-stone-950">
-              <iframe
-                :src="project.liveUrl"
-                class="w-full h-full border-none"
+            <!-- Screenshot preview with browser chrome -->
+            <div class="relative bg-stone-950" style="height: 480px;">
+              <img
+                :src="`https://api.microlink.io/?url=${encodeURIComponent(project.liveUrl)}&screenshot=true&meta=false&embed=screenshot.url`"
+                :alt="project.title"
+                class="w-full h-full object-cover object-top"
                 loading="lazy"
-                title="Live project preview"
               />
+              <!-- Open live link overlay -->
+              <div class="absolute inset-0 flex items-end justify-center pb-6 opacity-0 hover:opacity-100 transition-opacity duration-300 bg-stone-950/40">
+                <a :href="project.liveUrl" target="_blank"
+                  class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium">
+                  <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-4 h-4" />
+                  Open Live Site
+                </a>
+              </div>
             </div>
           </div>
         </div>
