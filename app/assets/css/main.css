@@ -212,6 +212,15 @@ body::before {
   transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ── Skill card entrance (no IntersectionObserver dependency) ── */
+@keyframes skillCardIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.skill-card {
+  animation: skillCardIn 0.35s ease forwards;
+}
+
 /* ── Card hover ── */
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;

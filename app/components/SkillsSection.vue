@@ -80,7 +80,7 @@ watch(filteredSkills, () => {
 
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-16">
         <div v-for="(skill, i) in filteredSkills" :key="skill.name"
-          class="card-surface rounded-2xl p-4 reveal group transition-all duration-300 hover:border-violet-500/20"
+          class="card-surface rounded-2xl p-4 group transition-all duration-300 hover:border-violet-500/20 skill-card"
           :style="{ animationDelay: `${i * 0.04}s` }">
           <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110"
             :style="{ background: `${skill.color}15` }">

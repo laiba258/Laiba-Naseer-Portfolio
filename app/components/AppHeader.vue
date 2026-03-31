@@ -83,11 +83,11 @@ watch(isDark, val => localStorage.setItem('colorMode', val ? 'dark' : 'light'))
           </a>
 
           <button
-            class="md:hidden p-2 rounded-lg transition-colors"
+            class="md:hidden w-9 h-9 rounded-xl flex items-center justify-center transition-colors"
             :class="isDark ? 'glass text-stone-400 hover:text-white' : 'bg-stone-100 text-stone-600'"
             @click="mobileOpen = !mobileOpen"
           >
-            <UIcon :name="mobileOpen ? 'i-heroicons-x-mark' : 'i-heroicons-bars-3'" class="w-5 h-5" />
+            <UIcon :name="mobileOpen ? 'i-heroicons-x-mark' : 'i-heroicons-bars-3'" class="w-4 h-4" />
           </button>
         </div>
       </nav>
@@ -131,13 +131,15 @@ watch(isDark, val => localStorage.setItem('colorMode', val ? 'dark' : 'light'))
 
 <style scoped>
 .header-scrolled {
-  background: rgba(12, 10, 9, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 :global(.light-mode) .header-scrolled {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 .mobile-menu-enter-active,
