@@ -77,8 +77,8 @@
 
 <script setup lang="ts">
 const socials = [
-  { label: 'GitHub', href: 'https://github.com', icon: 'i-simple-icons-github' },
-  { label: 'LinkedIn', href: 'https://linkedin.com', icon: 'i-simple-icons-linkedin' },
+  { label: 'GitHub', href: 'https://github.com/laiba258', icon: 'i-simple-icons-github' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/laiba-naseer-9564a1397', icon: 'i-simple-icons-linkedin' },
   { label: 'Email', href: 'mailto:laibanaseertts@gmail.com', icon: 'i-heroicons-envelope' },
 ]
 
