@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const facts = [
   { value: '3+', label: 'Years design' },
-  { value: '2', label: 'Certs' },
+  { value: '2', label: 'Certificates' },
   { value: 'Vue', label: 'Stack' },
   { value: 'PK', label: 'Pakistan' },
 ]
