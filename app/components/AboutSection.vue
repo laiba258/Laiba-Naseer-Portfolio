@@ -68,7 +68,7 @@ const certifications = [
             </div>
           </div>
 
-          <a href="/resume.pdf" target="_blank" rel="noopener" download="Laiba_Naseer_Resume.pdf"
+          <a href="/Laiba_Naseer__CV.pdf" download="Laiba_Naseer_CV.pdf"
             class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium">
             <UIcon name="i-heroicons-arrow-down-tray" class="w-4 h-4" />
             Download Resume
