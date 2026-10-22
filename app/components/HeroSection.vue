@@ -14,6 +14,7 @@ const socials = [
 
 const orbitTechs = [
   { name: 'Vue', short: 'Vue' },
+  { name: 'React', short: 'React' },
   { name: 'Nuxt', short: 'Nuxt' },
   { name: 'TypeScript', short: 'TS' },
   { name: 'Tailwind', short: 'TW' },
@@ -59,7 +60,7 @@ function getOrbitStyle(index: number, total: number) {
 
           <p class="animate-slide-up opacity-0 delay-200 text-stone-400 text-sm md:text-base lg:text-lg leading-relaxed max-w-lg mb-8" style="animation-fill-mode: forwards;">
             I build fast, beautiful web experiences with
-            <span class="text-violet-400 font-medium">Vue.js & Nuxt.js</span> —
+            <span class="text-violet-400 font-medium">Vue.js, Nuxt.js & React</span> —
             and bring a designer's eye to every pixel. Recent
             <span class="text-stone-300 font-medium">CS graduate</span> based in Pakistan.
           </p>
