@@ -53,14 +53,14 @@ function getOrbitStyle(index: number, total: number) {
           <div class="animate-slide-up opacity-0 delay-100 mb-5" style="animation-fill-mode: forwards;">
             <h1 class="font-display font-black leading-[1.05] tracking-tight">
               <span class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">Laiba Naseer</span>
-              <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl gradient-text mt-1">Frontend Dev</span>
-              <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-stone-500 mt-1">& UI Designer</span>
+              <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl gradient-text mt-1">React Frontend Dev</span>
+              <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-stone-500 mt-1">Vue • Nuxt • UI Design</span>
             </h1>
           </div>
 
           <p class="animate-slide-up opacity-0 delay-200 text-stone-400 text-sm md:text-base lg:text-lg leading-relaxed max-w-lg mb-8" style="animation-fill-mode: forwards;">
             I build fast, beautiful web experiences with
-            <span class="text-violet-400 font-medium">Vue.js, Nuxt.js & React</span> —
+            <span class="text-violet-400 font-medium">React, Vue.js & Nuxt.js</span> —
             and bring a designer's eye to every pixel. Recent
             <span class="text-stone-300 font-medium">CS graduate</span> based in Pakistan.
           </p>

@@ -29,18 +29,19 @@ const certifications = [
           <p class="text-stone-300 text-lg leading-relaxed">
             I'm a Frontend Developer and UI Designer based in
             <span class="text-white font-medium">Toba Tek Singh, Pakistan</span>.
-            I specialize in the Vue.js and Nuxt.js ecosystem, and I bring over
+            I build modern web experiences with
+            <span class="text-violet-400 font-medium">React, Vue, and Nuxt</span>, and I bring over
             <span class="text-violet-400 font-medium">3 years of graphic design experience</span>
             to every project I touch.
           </p>
           <p class="text-stone-400 leading-relaxed">
             I graduated with a BS in Computer Science from the University of Agriculture,
-            Sub Campus Toba Tek Singh. I love the intersection of design and engineering — where things
-            look great and work even better.
+            Sub Campus Toba Tek Singh, and I now focus on building polished frontend experiences
+            with React-driven product thinking and clean UI systems.
           </p>
           <p class="text-stone-400 leading-relaxed">
             Most of my projects so far have been team learning projects while I was growing my skills.
-            I'm now actively building independent work and taking on freelance opportunities.
+            I’m now actively building independent work and taking on freelance opportunities as a React developer.
           </p>
 
           <div class="card-surface p-5 rounded-2xl border-l-2 border-violet-500">

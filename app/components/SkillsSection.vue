@@ -9,6 +9,7 @@ const categories = [
 ]
 
 const skills = [
+  { name: 'React', label: 'Proficient', level: 84, category: 'frontend', icon: '⚛️', color: '#61dafb', colorEnd: '#38bdf8' },
   { name: 'Vue.js', label: 'Expert', level: 90, category: 'frontend', icon: '💚', color: '#42b883', colorEnd: '#35495e' },
   { name: 'Nuxt.js', label: 'Expert', level: 88, category: 'frontend', icon: '⚡', color: '#7c3aed', colorEnd: '#a78bfa' },
   { name: 'TypeScript', label: 'Proficient', level: 80, category: 'frontend', icon: '🔷', color: '#3178c6', colorEnd: '#60a5fa' },
@@ -26,7 +27,7 @@ const skills = [
 ]
 
 const allTechs = [
-  { name: 'Vue.js', icon: '💚' }, { name: 'Nuxt.js', icon: '⚡' },
+  { name: 'React', icon: '⚛️' }, { name: 'Vue.js', icon: '💚' }, { name: 'Nuxt.js', icon: '⚡' },
   { name: 'TypeScript', icon: '🔷' }, { name: 'Tailwind CSS', icon: '🎨' },
   { name: 'Figma', icon: '🎭' }, { name: 'Git', icon: '🐙' },
   { name: 'JavaScript', icon: '🟡' }, { name: 'HTML5', icon: '🌐' },

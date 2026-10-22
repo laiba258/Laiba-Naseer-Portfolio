@@ -1,8 +1,8 @@
 <script setup lang="ts">
 useHead({
-  title: 'Laiba Naseer — Frontend Developer & UI Designer',
+  title: 'Laiba Naseer — React Frontend Developer & UI Designer',
   meta: [
-    { name: 'description', content: 'Frontend Developer specializing in Vue.js & Nuxt.js with a background in graphic design. Based in Pakistan.' },
+    { name: 'description', content: 'React Frontend Developer specializing in React, Vue.js, and Nuxt.js with a background in UI design. Based in Pakistan.' },
   ],
 })
 </script>
