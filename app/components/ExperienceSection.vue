@@ -6,9 +6,9 @@ const timeline = [
     period: '2021 – Present',
     icon: 'i-heroicons-briefcase',
     color: '#7c3aed',
-    description: 'Building responsive web UIs for clients using Vue.js, Nuxt.js, and Tailwind CSS.',
+    description: 'Building responsive web UIs for clients using Vue.js, Nuxt.js, React, and Vite with Tailwind CSS.',
     points: [
-      'Built responsive web UIs using Vue.js, Nuxt.js, and Tailwind CSS',
+      'Built responsive web interfaces using Vue.js, Nuxt.js, React, and Tailwind CSS',
       'Designed visual identities including logos, flyers, and banners',
       'Managed projects from design to deployment',
     ],

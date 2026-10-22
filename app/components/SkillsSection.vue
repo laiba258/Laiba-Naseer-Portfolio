@@ -12,13 +12,14 @@ const skills = [
   { name: 'React', label: 'Proficient', level: 84, category: 'frontend', icon: '⚛️', color: '#61dafb', colorEnd: '#38bdf8' },
   { name: 'Vue.js', label: 'Expert', level: 90, category: 'frontend', icon: '💚', color: '#42b883', colorEnd: '#35495e' },
   { name: 'Nuxt.js', label: 'Expert', level: 88, category: 'frontend', icon: '⚡', color: '#7c3aed', colorEnd: '#a78bfa' },
+  { name: 'Vite', label: 'Proficient', level: 82, category: 'frontend', icon: '⚡', color: '#646cff', colorEnd: '#8b5cf6' },
   { name: 'TypeScript', label: 'Proficient', level: 80, category: 'frontend', icon: '🔷', color: '#3178c6', colorEnd: '#60a5fa' },
   { name: 'Tailwind CSS', label: 'Expert', level: 92, category: 'frontend', icon: '🎨', color: '#06b6d4', colorEnd: '#0d9488' },
   { name: 'JavaScript', label: 'Expert', level: 88, category: 'frontend', icon: '🟡', color: '#f7df1e', colorEnd: '#f59e0b' },
   { name: 'HTML & CSS', label: 'Expert', level: 95, category: 'frontend', icon: '🌐', color: '#e34f26', colorEnd: '#f06529' },
   { name: 'REST APIs', label: 'Proficient', level: 75, category: 'backend', icon: '🔌', color: '#8b5cf6', colorEnd: '#a78bfa' },
   { name: 'Git & GitHub', label: 'Proficient', level: 82, category: 'backend', icon: '🐙', color: '#f97316', colorEnd: '#fb923c' },
-  { name: 'SQLite / Drizzle', label: 'Familiar', level: 65, category: 'backend', icon: '🗄️', color: '#0ea5e9', colorEnd: '#38bdf8' },
+  { name: 'PostgreSQL', label: 'Familiar', level: 68, category: 'backend', icon: '🗄️', color: '#336791', colorEnd: '#4f9cf6' },
   { name: 'SEO', label: 'Proficient', level: 72, category: 'backend', icon: '🔍', color: '#10b981', colorEnd: '#34d399' },
   { name: 'UI/UX Design', label: 'Expert', level: 88, category: 'design', icon: '✏️', color: '#ec4899', colorEnd: '#f472b6' },
   { name: 'Figma', label: 'Proficient', level: 82, category: 'design', icon: '🎭', color: '#a259ff', colorEnd: '#c084fc' },
@@ -28,10 +29,9 @@ const skills = [
 
 const allTechs = [
   { name: 'React', icon: '⚛️' }, { name: 'Vue.js', icon: '💚' }, { name: 'Nuxt.js', icon: '⚡' },
-  { name: 'TypeScript', icon: '🔷' }, { name: 'Tailwind CSS', icon: '🎨' },
-  { name: 'Figma', icon: '🎭' }, { name: 'Git', icon: '🐙' },
-  { name: 'JavaScript', icon: '🟡' }, { name: 'HTML5', icon: '🌐' },
-  { name: 'Adobe Suite', icon: '🖌️' }, { name: 'SQLite', icon: '🗄️' },
+  { name: 'Vite', icon: '⚡' }, { name: 'TypeScript', icon: '🔷' }, { name: 'Tailwind CSS', icon: '🎨' },
+  { name: 'Figma', icon: '🎭' }, { name: 'Git', icon: '🐙' }, { name: 'JavaScript', icon: '🟡' },
+  { name: 'HTML5', icon: '🌐' }, { name: 'Adobe Suite', icon: '🖌️' }, { name: 'PostgreSQL', icon: '🗄️' },
   { name: 'REST APIs', icon: '🔌' }, { name: 'SEO', icon: '🔍' },
 ]
 

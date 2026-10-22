@@ -3,7 +3,7 @@ import { projects, teamSnapshots } from '~/data/projects'
 
 useHead({
   title: 'Projects — Laiba Naseer',
-  meta: [{ name: 'description', content: 'Projects built by Laiba Naseer — Vue.js, Nuxt.js, and UI design work.' }],
+  meta: [{ name: 'description', content: 'Projects built by Laiba Naseer — React, Vite, and UI design work.' }],
 })
 </script>
 

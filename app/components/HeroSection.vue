@@ -2,7 +2,7 @@
 const facts = [
   { value: '3+', label: 'Years design' },
   { value: '2', label: 'Certificates' },
-  { value: 'Vue', label: 'Stack' },
+  { value: 'Vue • React', label: 'Stack' },
   { value: 'PK', label: 'Pakistan' },
 ]
 
@@ -16,6 +16,7 @@ const orbitTechs = [
   { name: 'Vue', short: 'Vue' },
   { name: 'React', short: 'React' },
   { name: 'Nuxt', short: 'Nuxt' },
+  { name: 'Vite', short: 'Vite' },
   { name: 'TypeScript', short: 'TS' },
   { name: 'Tailwind', short: 'TW' },
   { name: 'Figma', short: 'Fig' },
@@ -54,13 +55,13 @@ function getOrbitStyle(index: number, total: number) {
             <h1 class="font-display font-black leading-[1.05] tracking-tight">
               <span class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">Laiba Naseer</span>
               <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl gradient-text mt-1">React Frontend Dev</span>
-              <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-stone-500 mt-1">Vue • Nuxt • UI Design</span>
+              <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-stone-500 mt-1">Vue • Nuxt • React • Vite</span>
             </h1>
           </div>
 
           <p class="animate-slide-up opacity-0 delay-200 text-stone-400 text-sm md:text-base lg:text-lg leading-relaxed max-w-lg mb-8" style="animation-fill-mode: forwards;">
             I build fast, beautiful web experiences with
-            <span class="text-violet-400 font-medium">React, Vue.js & Nuxt.js</span> —
+            <span class="text-violet-400 font-medium">React, Vue.js, Nuxt.js, and Vite</span> —
             and bring a designer's eye to every pixel. Recent
             <span class="text-stone-300 font-medium">CS graduate</span> based in Pakistan.
           </p>
