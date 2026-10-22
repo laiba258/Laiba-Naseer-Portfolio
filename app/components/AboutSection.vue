@@ -34,13 +34,13 @@ const certifications = [
             to every project I touch.
           </p>
           <p class="text-stone-400 leading-relaxed">
-            I'm currently in my final year of a BS in Computer Science at the University of Agriculture,
+            I graduated with a BS in Computer Science from the University of Agriculture,
             Sub Campus Toba Tek Singh. I love the intersection of design and engineering — where things
             look great and work even better.
           </p>
           <p class="text-stone-400 leading-relaxed">
             Most of my projects so far have been team learning projects while I was growing my skills.
-            I'm now actively looking for freelance work and opportunities to build things independently.
+            I'm now actively building independent work and taking on freelance opportunities.
           </p>
 
           <div class="card-surface p-5 rounded-2xl border-l-2 border-violet-500">
@@ -51,7 +51,7 @@ const certifications = [
               <div>
                 <h4 class="text-white font-semibold text-sm">BS Computer Science</h4>
                 <p class="text-stone-400 text-sm">University of Agriculture, Sub Campus Toba Tek Singh</p>
-                <p class="text-stone-600 text-xs mt-1">8th Semester · Graduating soon</p>
+                <p class="text-stone-600 text-xs mt-1">Graduated · 2025</p>
               </div>
             </div>
           </div>

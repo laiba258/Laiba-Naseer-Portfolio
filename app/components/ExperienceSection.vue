@@ -16,13 +16,13 @@ const timeline = [
   {
     title: 'BS Computer Science',
     company: 'University of Agriculture, Sub Campus Toba Tek Singh',
-    period: '2021 – Present',
+    period: '2021 – 2025',
     icon: 'i-heroicons-academic-cap',
     color: '#f472b6',
-    description: 'Currently in 8th semester, combining academic knowledge with practical development.',
+    description: 'Graduated with a Bachelor’s degree in Computer Science and focused on practical software development.',
     points: [
-      'Specializing in software engineering and web technologies',
-      'Built team projects applying real-world patterns',
+      'Built strong foundations in software engineering and web technologies',
+      'Worked on academic and personal projects with real-world product thinking',
     ],
   },
   {

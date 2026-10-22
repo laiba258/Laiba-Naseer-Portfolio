@@ -60,8 +60,8 @@ function getOrbitStyle(index: number, total: number) {
           <p class="animate-slide-up opacity-0 delay-200 text-stone-400 text-sm md:text-base lg:text-lg leading-relaxed max-w-lg mb-8" style="animation-fill-mode: forwards;">
             I build fast, beautiful web experiences with
             <span class="text-violet-400 font-medium">Vue.js & Nuxt.js</span> —
-            and bring a designer's eye to every pixel. Final year
-            <span class="text-stone-300 font-medium">CS student</span> based in Pakistan.
+            and bring a designer's eye to every pixel. Recent
+            <span class="text-stone-300 font-medium">CS graduate</span> based in Pakistan.
           </p>
 
           <div class="animate-slide-up opacity-0 delay-300 flex flex-wrap items-center gap-3 mb-8" style="animation-fill-mode: forwards;">
