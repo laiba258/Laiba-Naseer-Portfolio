@@ -51,7 +51,7 @@ const certifications = [
               <div>
                 <h4 class="text-white font-semibold text-sm">BS Computer Science</h4>
                 <p class="text-stone-400 text-sm">University of Agriculture, Sub Campus Toba Tek Singh</p>
-                <p class="text-stone-600 text-xs mt-1">Graduated · 2025</p>
+                <p class="text-stone-600 text-xs mt-1">Graduated · 2026</p>
               </div>
             </div>
           </div>
