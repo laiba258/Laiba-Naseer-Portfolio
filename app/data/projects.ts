@@ -7,6 +7,7 @@ export interface Project {
   longDescription: string
   stack: string[]
   liveUrl: string
+  mockupUrl: string
   color: string
   accent: string
   highlights: string[]
@@ -23,6 +24,44 @@ export interface TeamSnapshot {
 // Individual projects — built & deployed by Laiba
 export const projects: Project[] = [
   {
+    slug: 'my-food-restaurant',
+    title: 'My Food Restaurant',
+    type: 'Restaurant Brand Website',
+    year: '2026',
+    description: 'A premium restaurant landing page built to showcase menu highlights, brand personality, and an inviting dining experience.',
+    longDescription: 'My Food Restaurant is a polished restaurant brand website designed for a modern food business. It focuses on visual storytelling, elegant typography, warm color palette, and a seamless browsing experience for visitors exploring the menu and ambiance.',
+    stack: ['Nuxt 3', 'Vue 3', 'Tailwind CSS', 'Responsive Design', 'Brand UI'],
+    liveUrl: 'https://myfoodresturent.vercel.app/',
+    mockupUrl: '/my-food-restaurant-mockup.pdf',
+    color: '#f97316',
+    accent: '#fdba74',
+    highlights: [
+      'Luxury restaurant-inspired brand design',
+      'Responsive landing page with clear call-to-actions',
+      'Food-focused visual storytelling and layout flow',
+      'Built for strong first impressions and conversions',
+    ],
+  },
+  {
+    slug: 'blush-heaven',
+    title: 'Blush Heaven',
+    type: 'Beauty & Lifestyle Store',
+    year: '2026',
+    description: 'A soft, feminine beauty showcase with bold product presentation and premium minimal styling.',
+    longDescription: 'Blush Heaven is a beauty and lifestyle brand website designed with a luxurious editorial look. The experience balances soft tones, elegant spacing, and strong product emphasis to help customers discover best-selling items and the brand story more naturally.',
+    stack: ['Nuxt 3', 'Vue 3', 'Tailwind CSS', 'Brand Design', 'Landing Page UX'],
+    liveUrl: 'https://blushheaven.pages.dev/',
+    mockupUrl: '/blush-heaven-mockup%20(1).pdf',
+    color: '#ec4899',
+    accent: '#f9a8d4',
+    highlights: [
+      'Premium beauty brand aesthetic and soft palette',
+      'High-conversion landing page structure',
+      'Polished product-first presentation',
+      'Clean and elegant interface for brand storytelling',
+    ],
+  },
+  {
     slug: 'nutrimate',
     title: 'NutriMate',
     type: 'Full-Stack Web App',
@@ -31,6 +70,7 @@ export const projects: Project[] = [
     longDescription: 'NutriMate is a nutrition tracking application built with Nuxt 3 and Tailwind CSS. It features a modular component architecture, SEO optimization, and a smooth responsive user experience. Deployed on Vercel.',
     stack: ['Nuxt 3', 'Vue 3', 'Tailwind CSS', 'TypeScript', 'Vercel'],
     liveUrl: 'https://nutrimate-sigma.vercel.app',
+    mockupUrl: '',
     color: '#7c3aed',
     accent: '#a78bfa',
     highlights: [
@@ -49,6 +89,7 @@ export const projects: Project[] = [
     longDescription: 'Vantage Blog is a custom-built blog platform with Vue.js and Nuxt. It features complex state management, REST API integration, and a content-first reading experience focused on accessibility and clean typography.',
     stack: ['Vue.js', 'Nuxt.js', 'Tailwind CSS', 'REST API', 'Vercel'],
     liveUrl: 'https://blogsite-nine-iota.vercel.app',
+    mockupUrl: '',
     color: '#db2777',
     accent: '#f472b6',
     highlights: [

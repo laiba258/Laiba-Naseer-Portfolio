@@ -18,31 +18,45 @@ const displayProjects = computed(() =>
             Projects<span class="gradient-text">.</span>
           </h2>
         </div>
-        <NuxtLink v-if="preview" to="/projects"
-          class="hidden md:inline-flex btn-outline items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium">
+        <NuxtLink
+          v-if="preview"
+          to="/projects"
+          class="hidden md:inline-flex btn-outline items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium"
+        >
           View all
           <UIcon name="i-heroicons-arrow-right" class="w-4 h-4" />
         </NuxtLink>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
-        <NuxtLink v-for="(project, i) in displayProjects" :key="project.slug"
+        <NuxtLink
+          v-for="(project, i) in displayProjects"
+          :key="project.slug"
           :to="`/projects/${project.slug}`"
           class="group block card-surface card-hover rounded-2xl overflow-hidden reveal"
-          :style="{ animationDelay: `${i * 0.1}s` }">
+          :style="{ animationDelay: `${i * 0.1}s` }"
+        >
           <div class="relative h-52 overflow-hidden bg-stone-950">
             <img
               :src="`https://api.microlink.io/?url=${encodeURIComponent(project.liveUrl)}&screenshot=true&meta=false&embed=screenshot.url`"
               :alt="project.title"
               class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent" />
-            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              :style="{ background: `${project.color}18` }">
+            >
+            <div class="absolute inset-0 bg-linear-to-t from-stone-950 via-stone-950/20 to-transparent" />
+            <div
+              class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              :style="{ background: `${project.color}18` }"
+            >
               <span class="flex items-center gap-2 px-4 py-2 rounded-xl glass text-white text-sm font-medium">
                 <UIcon name="i-heroicons-eye" class="w-4 h-4" />
                 View Details
+              </span>
+            </div>
+            <div v-if="project.mockupUrl" class="absolute top-3 right-3 z-10">
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-stone-950/80 px-2.5 py-1 text-[10px] font-medium tracking-[0.12em] text-stone-200 uppercase backdrop-blur-sm">
+                <UIcon name="i-heroicons-document-text" class="w-3 h-3 text-violet-300" />
+                Mockup
               </span>
             </div>
           </div>
